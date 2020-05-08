@@ -1,8 +1,14 @@
 def finder(files, queries):
 
-    """
-    YOUR CODE HERE
-    """
+    # Create the cache for later lookup
+    cache = {}
+    for q in queries:
+        cache[q] = True
+
+    result = []
+    for f in files:
+        if f.split("/")[-1] in cache:
+            result.append(f)
 
     return result
 
